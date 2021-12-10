@@ -48,7 +48,7 @@ notunderwater
 count 8
 type static
 tex 40 44
-color 0x09c362 0x43a60f
+color 0x6fff00 0xfdff00
 alpha 0 128 64
 originjitter 8 8 8
 velocityoffset 1 1 8
@@ -344,15 +344,10 @@ effect TE_EXPLOSION
 notunderwater
 count 128
 type static
-color 0xFFAB57 0xFF0A0A
 color 0xf95e0a 0xFFE700
 stretchfactor 0
-size 0.5 1.5
 size 0.25 1
-tex 0 8
 tex 33 33
-tex 36 36
-alpha 128 256 80
 alpha 192 256 128
 gravity 0.3
 bounce 1
@@ -399,12 +394,9 @@ effect TE_EXPLOSION
 notunderwater
 count 32
 type spark
-tex 33 33
-tex 36 36
+tex 48 48
 color 0xFFAB57 0xFFAB57
-size 0.1 0.5
-size 0.5 1.0
-alpha 256 256 1536
+size 2 3
 alpha 192 256 128
 stretchfactor 0.5
 bounce 1
@@ -414,7 +406,7 @@ liquidfriction 44
 originjitter 1 1 1
 velocityjitter 512 512 640
 velocitymultiplier 1
-rotate -120 0 50 100
+rotate 0 360 -100 100
 
 
 
@@ -472,6 +464,7 @@ effect TE_TAREXPLOSION
 count 128
 type static
 //tex 33 33
+tex 40 47
 color 0x6304f9 0x4f43d6
 alpha 64 256 32
 originjitter 8 8 8
@@ -511,14 +504,17 @@ effect TE_BLOOD
 count 0.333
 type blood
 tex 24 31
-size 8 8
+tex 58 60
+size 2 2
 alpha 256 256 64
 bounce -1
 airfriction 1
 //liquidfriction 4
 liquidfriction 8
-velocityjitter 64 64 64
+velocityjitter 32 32 32
 velocitymultiplier 1
+originjitter 8 8 8
+// color 0x0000FF 0x0000FF
 
 gravity 1
 bounce 1
@@ -666,28 +662,35 @@ velocityjitter 16 16 16
 
 
 //----------------------------------------------------------------------
-// Blood Trail
+// Gib Blood Trail
 //----------------------------------------------------------------------
 effect TR_BLOOD
 trailspacing 16
-type blood
 color 0xFFFFFF 0xFFFFFF
+type blood
 tex 24 32
-size 8 12
+size 4 8
 alpha 384 384 192
+alpha 64 128 128
 bounce -1
 airfriction 1
 liquidfriction 4
 velocityjitter 64 64 64
 velocitymultiplier 0.5
 
+
+//----------------------------------------------------------------------
+// Zombie Gib Blood Trail
+//----------------------------------------------------------------------
 effect TR_SLIGHTBLOOD
 trailspacing 32
 type blood
 color 0xFFFFFF 0xFFFFFF
 tex 24 32
-size 8 12
+tex 58 60
+size 4 8
 alpha 384 384 192
+alpha 64 128 128
 bounce -1
 airfriction 1
 liquidfriction 4
@@ -709,7 +712,8 @@ effect TR_KNIGHTSPIKE
 notunderwater
 trailspacing 1
 count 1
-type snow
+tex 56 57
+type static
 color 0x7f1707 0xe7ab5f			// Red/Orange picked from projectile palette
 size 1 1
 sizeincrease -1
@@ -742,10 +746,12 @@ trailspacing 3
 type static
 color 0x801010 0xFFA020
 size 5 1
-alpha 10 20 15
+alpha 128 256 512
 velocityjitter 25 25 25
 airfriction 3
 liquidfriction 3
+relativeoriginoffset 32 0 0
+tex 0 7
 
 // bubble trail
 effect TR_KNIGHTSPIKE
@@ -761,81 +767,55 @@ liquidfriction 0.25
 originjitter 16 16 16
 velocityjitter 96 96 96
 
-effect TR_KNIGHTSPIKE
-count 0
-countabsolute 1
-relativeoriginoffset 32 0 0
-type static
-color 0x801010 0xFFA020
-size 12 16
-sizeincrease -8
-tex 48 55
-alpha 256 256 384
-relativevelocityoffset 32 0 0
-
 
 
 //----------------------------------------------------------------------
 // Hell Knight Explosion
 //----------------------------------------------------------------------
 effect TE_KNIGHTSPIKE
-countabsolute 1					// Only one per particle emitter
-type decal
-tex 0 8
-size 3 9						// Large decal
-alpha 32 96 0					// Variable alpha
-originjitter 6 6 6
-
-effect TE_KNIGHTSPIKE
-countabsolute 1					// Only one per particle emitter
-type decal
-size 1 6						// variable size
-alpha 1024 1024 0
+lightcolor 1 0.75 0				// hot yellow glow
 lightradius 64					// Small light
 lightradiusfade 64				// gentle fade
 lightshadow 0
-lightcolor 1 0.75 0				// hot yellow glow
 
 effect TE_KNIGHTSPIKE
+alpha 32 96 0					// Variable alpha
+count 0
+countabsolute 1					// Only one per particle emitter
+originjitter 6 6 6
+size 3 9						// Large decal
 tex 0 8
+type decal
+
+effect TE_KNIGHTSPIKE
 notunderwater
-count 512
-type alphastatic
-color 0x903010 0xFFD030
-size 1 6
-alpha 0 128 512
+airfriction 6
+alpha 64 128 64
+color 0x101010 0x606060
+count 64
 gravity -0.1
-airfriction 6
-velocityoffset 0 0 32
-velocityjitter 384 384 384
-
-effect TE_KNIGHTSPIKE
-tex 0 8
-notunderwater
-count 512
+rotate 0 360 -180 180
+size 16 32
+sizeincrease 4
+tex 0 7
 type static
-color 0x903010 0xFFD030
-size 0.1 0.2
-alpha 0 256 256
-gravity 0.1
-airfriction 6
-liquidfriction 12
+blend invmod
+velocityjitter 384 384 384
 velocityoffset 0 0 32
-velocityjitter 162 162 162
 
 // lingering flame
 effect TE_KNIGHTSPIKE
-tex 0 8
+tex 40 47
 count 16
-type smoke
-//color 0x101010 0x606060
+type static
 color 0x903010 0xFFD030
-size 6 8
-alpha 64 128 128
+size 8 16
+alpha 128 256 192
 gravity -0.05
 liquidfriction 1
 originjitter 16 16 16
 velocityjitter 16 16 16
+rotate 0 360 -180 180
 
 // bubbles
 effect TE_KNIGHTSPIKE
@@ -868,7 +848,7 @@ effect TR_VORESPIKE
 trailspacing 1
 count 1
 type snow
-tex 33 33
+// tex 33 33
 color 0x502030 0x502030
 size 1 2
 sizeincrease -1
@@ -881,7 +861,7 @@ originjitter 4 4 4
 effect TR_VORESPIKE
 trailspacing 1
 type spark
-tex 33 33
+// tex 33 33
 stretchfactor 0.25
 color 0x502030 0x502030
 size 0.5 1.0
@@ -896,6 +876,7 @@ trailspacing 3
 type smoke
 color 0x502030 0x502030
 size 5 10
+sizeincrease -3
 alpha 10 20 15
 velocityjitter 25 25 25
 airfriction 3
