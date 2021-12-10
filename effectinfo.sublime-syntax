@@ -1,0 +1,100 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: effectinfo
+file_extensions:
+  - txt
+scope: source.effectinfo
+
+
+variables:
+  identifier: '\b[[:alpha:]_][[:alnum:]_]*\b'
+  particle_props: (underwater|notunderwater|count|countabsolute|type|blend|orientation|color|tex|sizeincrease|size|alpha|time|gravity|bounce|airfriction|liquidfriction|originoffset|velocityoffset|originjitter|velocityjitter|velocitymultiplier|trailspacing|stretchfactor|rotate)
+  decal_props: (staincolor|stainalpha|stainsize|staintex|stainless)
+  light_props: (lightradius|lightradiusfade|lighttime|lightcolor|lightshadow|lightcubemapnum)
+
+
+contexts:
+  main:
+    # Comments begin with a '//' and finish at the end of the line
+    - match: '//.*'
+      scope: punctuation.definition.comment.effectinfo
+      push: line_comment
+
+    - match: /\*
+      scope: punctuation.definition.comment.c
+      push:
+        - - meta_scope: comment.block.effectinfo
+          - match: \*/
+            scope: punctuation.definition.comment.c
+            pop: true
+          - match: ^\s*(\*)(?!/)
+            captures:
+              1: punctuation.definition.comment.c
+
+    - match: ^(effect)\b
+      scope: entity.name.type
+      captures:
+        1: storage.type.class.effectinfo keyword.declaration.class.effectinfo
+      push:
+        - meta_scope: meta.class.effectinfo
+        - include: line-continuation-or-pop
+        - match: ':'
+          scope: punctuation.section.class.begin.effectinfo
+          pop: true
+        - match: "(?={{identifier}})"
+          push:
+            - meta_content_scope: entity.name.class.effectinfo
+            - include: entity-name-class
+            - match: ''
+              pop: true
+    - match: ^(underwater|notunderwater)$
+      scope: constant.language
+
+    - match: '\b({{particle_props}}|{{decal_props}}|{{light_props}})\b'
+      captures:
+        1: keyword.directive.effectinfo
+      push:
+        - meta_scope: punctuation.definition.variable
+        - match: $
+          pop: true
+        - include: values
+
+  values:
+    - include: variables
+    - match: '(0x[0-9a-fA-F]{6})'
+      captures:
+        1: constant.numeric.effectinfo
+    - match: '(-?[0-9\.]+)'
+      captures:
+        1: constant.numeric.effectinfo
+    - match: '[\t ](alphastatic|static|spark|beam|rain|raindecal|snow|bubble|blood|smoke|decal|entityparticle)'
+      scope: constant.language.effectinfo
+    - match: '[\t ](alpha|add|invmod)'
+      scope: constant.language.effectinfo
+    - match: '[\t ](billboard|oriented|beam|spark)'
+      scope: constant.language.effectinfo
+
+    - match: '//.*'
+      push: line_comment
+
+  variables:
+    - match: '(\$[A-Za-z0-9\_]+)\b'
+      scope: variable.other.nginx
+
+  line-continuation-or-pop:
+    - include: line-continuation
+    - match: (?=\s*($|;|#))
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.effectinfo
+    - match: $
+      pop: true
+
+  entity-name-class:
+    - include: generic-names
+
+  generic-names:
+    - match: '{{identifier}}'
+      scope: meta.generic-name.effectinfo
