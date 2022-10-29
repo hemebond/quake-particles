@@ -1,0 +1,59 @@
+//----------------------------------------------------------------------
+// Gib Blood Trail
+//----------------------------------------------------------------------
+effect TR_BLOOD
+trailspacing 16
+color 0xFFFFFF 0xFFFFFF
+type blood
+tex 24 32
+size 4 8
+alpha 384 384 192
+alpha 64 128 128
+bounce -1
+airfriction 1
+liquidfriction 4
+velocityjitter 64 64 64
+velocitymultiplier 0.5
+
+
+//----------------------------------------------------------------------
+// Zombie Gib Blood Trail
+//----------------------------------------------------------------------
+effect TR_SLIGHTBLOOD
+trailspacing 32
+type blood
+color 0xFFFFFF 0xFFFFFF
+tex 24 32
+tex 58 60
+size 4 8
+alpha 384 384 192
+alpha 64 128 128
+bounce -1
+airfriction 1
+liquidfriction 4
+velocityjitter 64 64 64
+velocitymultiplier 0.5
+
+
+
+//----------------------------------------------------------------------
+// Blood Explosion
+//----------------------------------------------------------------------
+effect TE_BLOOD
+count 0.333
+type blood
+tex 24 31
+tex 58 60
+size 2 2
+alpha 256 256 64
+bounce -1
+airfriction 1
+//liquidfriction 4
+liquidfriction 8
+velocityjitter 32 32 32
+velocitymultiplier 1
+originjitter 8 8 8
+// color 0x0000FF 0x0000FF
+
+gravity 1
+bounce 1

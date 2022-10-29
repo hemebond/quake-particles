@@ -1,0 +1,41 @@
+//----------------------------------------------------------------------
+// Rocket Trail
+//----------------------------------------------------------------------
+// smoke trail
+effect TR_ROCKET
+alpha 4 32 64
+color 0x303030 0x606060
+lightcolor 3.0 1.5 0.5
+lightradius 128
+lighttime 0
+notunderwater
+size 3 6
+tex 0 8
+trailspacing 1
+type smoke
+
+// flame trail
+effect TR_ROCKET
+alpha 144 144 700
+color 0x801010 0xFFA020
+size 3 3
+tex 0 8
+trailspacing 3
+type static
+velocityjitter 20 20 20
+velocitymultiplier -0.25
+
+// bubble trail
+effect TR_ROCKET
+underwater
+trailspacing 3
+type bubble
+tex 62 62
+color 0x404040 0x808080
+size 1 2
+sizeincrease -0.5
+alpha 64 256 64
+gravity -0.125
+bounce 0.1
+liquidfriction 0.25
+velocityjitter 16 16 16

@@ -1,0 +1,38 @@
+//----------------------------------------------------------------------
+// Chthon Eruption
+//----------------------------------------------------------------------
+effect TE_LAVASPLASH
+count 128
+type static
+color 0xf95e0a 0xFFE700
+color 0x6f0f00 0xe3974f
+size 10 20
+tex 17 23
+tex 0 7
+alpha 128 256 32
+gravity 0.3
+bounce 1
+airfriction 1
+gravity -0.0125
+originoffset 0 0 16
+originjitter 128 128 0
+velocityoffset 0 0 0
+velocityjitter 128 128 32
+
+// slow-falling embers
+effect TE_LAVASPLASH
+count 256
+type static
+color 0xFFAB57 0xFF0A0A
+color 0xf95e0a 0xFFE700
+size 1 4
+alpha 64 256 4
+gravity 0.3
+bounce 1
+airfriction 1
+gravity 0.01
+liquidfriction 100
+originoffset 0 0 16
+originjitter 128 128 0
+velocityoffset 0 0 256
+velocityjitter 128 128 256

@@ -1,0 +1,84 @@
+//----------------------------------------------------------------------
+// Spawn Explosion
+//----------------------------------------------------------------------
+
+effect TE_TAREXPLOSION
+countabsolute 1
+type decal
+tex 8 16
+size 48 48
+alpha 256 256 0
+originjitter 40 40 40
+
+effect TE_TAREXPLOSION
+lightradius 600
+lightradiusfade 1200
+lightcolor 1.6 0.8 2
+
+// bubbles
+effect TE_TAREXPLOSION
+underwater
+count 128
+type bubble
+tex 62 62
+color 0x404040 0x808080
+size 2 2
+alpha 128 256 64
+gravity -0.125
+bounce 0.1
+liquidfriction 0.25
+originjitter 16 16 16
+velocityjitter 96 96 96
+
+// smoke plume
+effect TE_TAREXPLOSION
+notunderwater
+count 4
+type smoke
+color 0x6304f9 0x4f43d6
+size 20 40
+alpha 64 128 128
+bounce 1
+tex 0 7
+airfriction 1
+liquidfriction 1
+gravity -0.05
+velocityjitter 128 128 256
+velocityoffset 0 0 64
+rotate -120 0 50 100
+
+// globs
+effect TE_TAREXPLOSION
+count 128
+type static
+//tex 33 33
+tex 40 47
+color 0x6304f9 0x4f43d6
+alpha 64 256 32
+originjitter 8 8 8
+velocityjitter 32 32 32
+size 16 32
+size 1 4
+gravity 1
+bounce 1
+liquidfriction 10
+velocityjitter 64 64 96
+velocityjitter 256 256 320
+velocityoffset 0 0 32
+
+// small globs
+effect TE_TAREXPLOSION
+count 128
+type spark
+tex 33 33
+color 0x6304f9 0x4f43d6
+size 0.1 0.5
+alpha 192 256 128
+stretchfactor 0.5
+bounce 1
+airfriction 5
+gravity 0.25
+liquidfriction 10
+originjitter 1 1 1
+velocityjitter 512 512 640
+velocitymultiplier 1

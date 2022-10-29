@@ -1,0 +1,14 @@
+//----------------------------------------------------------------------
+// Teleport Explosion
+//----------------------------------------------------------------------
+effect TE_TELEPORT
+count 112
+type static
+color 0xA0A0A0 0xFFFFFF
+size 10 10
+alpha 64 128 256
+airfriction 1
+liquidfriction 4
+originoffset 0 0 28
+originjitter 16 16 28
+velocityjitter 0 0 256

@@ -1,0 +1,71 @@
+//----------------------------------------------------------------------
+// Shotgun
+//----------------------------------------------------------------------
+effect TE_GUNSHOT
+countabsolute 1
+type decal
+blend add
+size 2 4
+alpha 64 192 0
+originjitter 6 6 6
+
+// bubbles
+effect TE_GUNSHOT
+underwater
+type bubble
+tex 62 62
+count 1
+color 0x101010 0x808080			// Dark/Light Grey
+size 1 2
+alpha 96 256 64
+originjitter 2 2 2
+velocityjitter 8 8 8
+gravity -0.125
+bounce 0.1
+liquidfriction 0.25
+
+// smoke puff
+effect TE_GUNSHOT
+count 1
+tex 0 8
+type smoke
+color 0x101010 0x707070			// dark/light grey
+size 4 6
+sizeincrease 2
+alpha 64 96 128					// Quickly dispate
+originjitter 2 2 2
+velocityjitter 8 8 8
+gravity -0.05
+rotate 0 360 -90 90
+
+// small sharp sparks
+effect TE_GUNSHOT
+notunderwater
+count 2
+type spark
+tex 33 33
+color 0xFFAB57 0xFFAB57
+size 0.25 0.5
+alpha 256 256 1536
+alpha 256 256 3072
+stretchfactor .4
+bounce 1
+gravity 0.125
+originjitter 1 1 1
+velocityjitter 128 128 160
+
+// debris
+effect TE_GUNSHOT
+count 2
+type alphastatic
+tex 33 33
+color 0x505050 0x707070
+alpha 128 128 0
+size 0.4 0.8
+sizeincrease -0.1
+bounce 1
+gravity 0.5
+originjitter 1 1 1
+velocityjitter 32 32 64
+time 2 4
+liquidfriction 32

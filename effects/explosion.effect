@@ -1,0 +1,101 @@
+//----------------------------------------------------------------------
+// Rocket and Grenade Explosion
+//----------------------------------------------------------------------
+
+// scorch mark
+effect TE_EXPLOSION
+countabsolute 1
+type decal
+size 48 48
+alpha 256 256 0
+originjitter 40 40 40
+
+// light
+effect TE_EXPLOSION
+lightradius 350
+lightradiusfade 700
+lightcolor 4 2 0.5
+
+// bubbles
+effect TE_EXPLOSION
+underwater
+count 128
+type bubble
+tex 62 62
+color 0x404040 0x808080
+size 2 2
+alpha 128 256 96
+gravity -0.125
+bounce 0.1
+liquidfriction 0.25
+originjitter 16 16 16
+velocityjitter 96 96 96
+
+// large embers
+effect TE_EXPLOSION
+notunderwater
+count 128
+type static
+color 0xf95e0a 0xFFE700
+stretchfactor 0
+size 0.25 1
+tex 33 33
+alpha 192 256 128
+gravity 0.3
+bounce 1
+airfriction 0.5
+gravity 1
+liquidfriction 100
+originjitter 10 10 10
+velocityoffset 0 0 64
+velocityjitter 512 512 320
+
+// explosion core
+effect TE_EXPLOSION
+count 2
+type alphastatic
+color 0xffc156 0x2d2d2d
+size 20 20
+alpha 62 86 192
+bounce -1
+tex 0 7
+airfriction 0.2
+gravity 0.5
+velocityjitter 64 64 128
+velocityoffset 0 0 64
+
+// smoke plume
+effect TE_EXPLOSION
+notunderwater
+count 16
+type smoke
+color 0x101010 0x303030
+size 20 40
+alpha 64 128 32
+bounce 1
+tex 0 7
+airfriction 1
+liquidfriction 1
+gravity -0.05
+velocityjitter 128 128 256
+velocityoffset 0 0 64
+rotate -120 0 50 100
+
+// small embers
+effect TE_EXPLOSION
+notunderwater
+count 32
+type spark
+tex 48 48
+color 0xFFAB57 0xFFAB57
+size 2 3
+alpha 192 256 128
+stretchfactor 0.5
+bounce 1
+airfriction 5
+gravity 0.25
+liquidfriction 44
+originjitter 1 1 1
+velocityjitter 512 512 640
+velocitymultiplier 1
+rotate 0 360 -100 100

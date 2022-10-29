@@ -1,0 +1,132 @@
+//----------------------------------------------------------------------
+// Hell Knight Trail
+//----------------------------------------------------------------------
+effect TR_KNIGHTSPIKE
+lightradius 64
+lighttime 0
+lightcolor 1 0.75 0
+
+// small sparks
+effect TR_KNIGHTSPIKE
+notunderwater
+trailspacing 1
+count 1
+tex 56 57
+type static
+color 0x7f1707 0xe7ab5f			// Red/Orange picked from projectile palette
+size 1 1
+sizeincrease -1
+gravity 0
+time 0.5 1
+velocityjitter 16 16 16
+originjitter 4 4 4
+
+// slow-falling stretched particles
+effect TR_KNIGHTSPIKE
+notunderwater
+count 3
+type spark
+color 0xFFAB57 0xFF0A0A
+stretchfactor 0
+size 1 2
+alpha 64 256 160
+gravity 0.3
+bounce 1
+airfriction 0.5
+gravity 0.05
+liquidfriction 5
+originjitter 0 0 0
+velocityjitter 50 50 50
+rotate 0 360 1000 1000
+
+// smokey flame trail
+effect TR_KNIGHTSPIKE
+trailspacing 3
+type static
+color 0x801010 0xFFA020
+size 5 1
+alpha 128 256 512
+velocityjitter 25 25 25
+airfriction 3
+liquidfriction 3
+relativeoriginoffset 32 0 0
+tex 0 7
+
+// bubble trail
+effect TR_KNIGHTSPIKE
+trailspacing 9
+type bubble
+tex 62 62
+color 0x404040 0x808080
+size 2 2
+alpha 64 256 128
+gravity -0.125
+bounce 1.5
+liquidfriction 0.25
+originjitter 16 16 16
+velocityjitter 96 96 96
+
+
+
+//----------------------------------------------------------------------
+// Hell Knight Explosion
+//----------------------------------------------------------------------
+effect TE_KNIGHTSPIKE
+lightcolor 1 0.75 0				// hot yellow glow
+lightradius 64					// Small light
+lightradiusfade 64				// gentle fade
+lightshadow 0
+
+effect TE_KNIGHTSPIKE
+alpha 32 96 0					// Variable alpha
+count 0
+countabsolute 1					// Only one per particle emitter
+originjitter 6 6 6
+size 3 9						// Large decal
+tex 0 8
+type decal
+
+effect TE_KNIGHTSPIKE
+notunderwater
+airfriction 6
+alpha 64 128 64
+color 0x101010 0x606060
+count 64
+gravity -0.1
+rotate 0 360 -180 180
+size 16 32
+sizeincrease 4
+tex 0 7
+type static
+blend invmod
+velocityjitter 384 384 384
+velocityoffset 0 0 32
+
+// lingering flame
+effect TE_KNIGHTSPIKE
+tex 40 47
+count 16
+type static
+color 0x903010 0xFFD030
+size 8 16
+alpha 128 256 192
+gravity -0.05
+liquidfriction 1
+originjitter 16 16 16
+velocityjitter 16 16 16
+rotate 0 360 -180 180
+
+// bubbles
+effect TE_KNIGHTSPIKE
+underwater
+count 64
+type bubble
+tex 62 62
+color 0x404040 0x808080
+size 2 2
+alpha 64 256 128
+gravity -0.125
+bounce 1.5
+liquidfriction 0.25
+originjitter 8 8 8
+velocityjitter 64 64 64

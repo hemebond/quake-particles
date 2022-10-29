@@ -1,0 +1,160 @@
+//full particle fire (small fire) - fire      	 // this is used for particle torch flames (effect by Chip & Seanstar, modified by jakub/seven)
+effect PE_FLAME_SMALL	      		 // (designed for original Nexuiz particlefont row 48 - 55 !)
+count 1
+notunderwater
+type static
+tex 0 7
+size 6 8
+sizeincrease -10
+alpha 0 400 600
+originoffset 0 0 -10
+originjitter 1 1 3
+airfriction 4
+bounce 0
+velocityjitter 20 20 10
+velocitymultiplier 1100.01
+gravity -0.35
+color 0xff7f60 0xffc091
+rotate 160 -160 -110 110
+
+//full particle fire (glow fire) - fire      	 // this is used for particle torch flames (effect by Chip & Seanstar, modified by jakub/seven)
+effect PE_FLAME_SMALL	      		 // (designed for original Nexuiz particlefont row 48 - 55 !)
+count .2
+notunderwater
+type static
+tex 48 55
+size 8 9
+sizeincrease -17
+alpha 0 300 600
+originoffset 0 0 -8
+originjitter 1 1 3
+airfriction 4
+bounce 0
+velocityjitter 20 20 20
+velocitymultiplier 1100.01
+gravity -0.25
+color 0xff7f60 0xffc091
+rotate 160 -160 -110 110
+//color 0xff0000 0xe3974f
+
+
+
+//full particle fire (small torches) - smoke
+effect PE_FLAME_SMALL
+count 0.05
+notunderwater
+type smoke
+tex 0 7
+// color 0x303030 0x303030
+color 0x303030 0x303030
+size 6 10
+sizeincrease 7
+alpha 0 70 80
+originoffset 0 0 20
+originjitter 7 7 10
+airfriction 5
+bounce 0
+gravity -0.3
+
+//Quake particles
+effect PE_FLAME_SMALL
+count .15
+tex 63 63
+type snow
+//color 0xFFAB57 0xFF0A0A
+color 0xff7f60 0xffc091
+stretchfactor 0
+size .6 .6
+alpha 100 256 170
+//gravity 0.3
+bounce -1
+airfriction 6
+gravity -0.3
+liquidfriction 5
+originjitter 5 5 0
+originoffset 0 0 -10
+velocityjitter 45 55 110
+velocityoffset 0 0 130
+
+//full particle fire (big fire) - fire      	 // this is used for particle torch flames (effect by Chip & Seanstar, modified by jakub/seven)
+effect PE_FLAME_LARGE	      		 // (designed for original Nexuiz particlefont row 48 - 55 !)
+count .4
+notunderwater
+type static
+tex 48 55
+// size 10 12
+size 20 24
+// sizeincrease -17
+sizeincrease -20
+alpha 0 300 300
+originoffset 0 0 -8
+originjitter 1 1 3
+airfriction 4
+bounce 0
+velocityjitter 20 20 20
+velocitymultiplier 1100.01
+// gravity -0.25
+gravity -0.75
+color 0xff7f60 0xffc091
+rotate 160 -160 -110 110
+//color 0xff0000 0xe3974f
+
+//full particle fire (big fire) - fire      	 // this is used for particle torch flames (effect by Chip & Seanstar, modified by jakub/seven)
+effect PE_FLAME_LARGE 	      		 // (designed for original Nexuiz particlefont row 48 - 55 !)
+count 1
+notunderwater
+type static
+tex 0 7
+size 9 11
+sizeincrease -12
+alpha 0 400 400
+originoffset 0 0 -8
+originjitter 3 3 5
+airfriction 4
+bounce 0
+velocityjitter 20 20 40
+velocitymultiplier 1100.01
+gravity -0.25
+color 0xff7f60 0xffc091
+rotate 160 -160 -110 110
+//color 0xff0000 0xe3974f
+
+
+
+
+//Quake particles
+effect PE_FLAME_LARGE
+count .15
+tex 63 63
+type snow
+//color 0xFFAB57 0xFF0A0A
+color 0xff7f60 0xffc091
+stretchfactor 0
+size .6 .6
+alpha 100 256 70
+//gravity 0.3
+bounce -1
+airfriction 6
+// gravity -0.3
+gravity -0.7
+liquidfriction 5
+originjitter 5 5 0
+originoffset 0 0 -10
+velocityjitter 45 55 110
+velocityoffset 0 0 130
+
+//full particle fire (big fire) - smoke
+effect PE_FLAME_LARGE
+count 0.3
+notunderwater
+type smoke
+tex 0 7
+color 0x303030 0x303030
+size 6 10
+sizeincrease 7
+alpha 0 70 80
+originoffset 0 0 30
+originjitter 7 7 7
+airfriction 5
+bounce 0
+gravity -0.3

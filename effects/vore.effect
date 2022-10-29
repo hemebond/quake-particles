@@ -1,0 +1,47 @@
+//----------------------------------------------------------------------
+// Vore Trail
+//----------------------------------------------------------------------
+
+effect TR_VORESPIKE
+lightradius 64
+lighttime 0
+lightcolor 0.3 0.1 0.2
+
+// floaters
+effect TR_VORESPIKE
+trailspacing 1
+count 1
+type snow
+// tex 33 33
+color 0x502030 0x502030
+size 1 2
+sizeincrease -1
+gravity 0
+time 0.5 2
+velocityjitter 16 16 16
+originjitter 4 4 4
+
+// sparkles
+effect TR_VORESPIKE
+trailspacing 1
+type spark
+// tex 33 33
+stretchfactor 0.25
+color 0x502030 0x502030
+size 0.5 1.0
+alpha 192 256 1024
+gravity 0.05
+originjitter 8 8 8
+velocityjitter 256 256 256
+
+// smokey trail
+effect TR_VORESPIKE
+trailspacing 3
+type smoke
+color 0x502030 0x502030
+size 5 10
+sizeincrease -3
+alpha 10 20 15
+velocityjitter 25 25 25
+airfriction 3
+liquidfriction 3
